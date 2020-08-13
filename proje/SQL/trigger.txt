@@ -1,0 +1,76 @@
+CREATE OR REPLACE FUNCTION test()
+  RETURNS trigger AS
+$$
+BEGIN
+         INSERT INTO cari(toplam)
+         VALUES(NEW.stok_miktar);
+ 
+    RETURN NEW;
+END;
+$$
+LANGUAGE 'plpgsql';
+
+CREATE TRIGGER test_trigger
+  AFTER delete
+  ON stok
+  FOR EACH ROW
+  EXECUTE PROCEDURE test();
+
+
+
+CREATE OR REPLACE FUNCTION test1()
+  RETURNS trigger AS
+$$
+BEGIN
+         INSERT INTO cari(toplam)
+         VALUES(NEW.stok_miktar);
+ 
+    RETURN NEW;
+END;
+$$
+LANGUAGE 'plpgsql';
+
+CREATE TRIGGER test_trigger1
+  AFTER delete
+  ON stok
+  FOR EACH ROW
+  EXECUTE PROCEDURE test1();
+
+
+
+CREATE OR REPLACE FUNCTION test2()
+  RETURNS trigger AS
+$$
+BEGIN
+         INSERT INTO cari(toplam)
+         VALUES(NEW.stok_miktar);
+ 
+    RETURN NEW;
+END;
+$$
+LANGUAGE 'plpgsql';
+
+CREATE TRIGGER test_trigger2
+  AFTER delete
+  ON stok
+  FOR EACH ROW
+  EXECUTE PROCEDURE test2();
+
+
+CREATE OR REPLACE FUNCTION test3()
+  RETURNS trigger AS
+$$
+BEGIN
+         INSERT INTO cari(toplam)
+         VALUES(NEW.stok_miktar);
+ 
+    RETURN NEW;
+END;
+$$
+LANGUAGE 'plpgsql';
+
+CREATE TRIGGER test_trigger3
+  AFTER delete
+  ON stok
+  FOR EACH ROW
+  EXECUTE PROCEDURE test3();

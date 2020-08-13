@@ -1,0 +1,13 @@
+CREATE OR REPLACE PROCEDURE public.hediye()
+LANGUAGE 'sql'
+AS $BODY$select * FROM hediye$BODY$;
+
+CREATE OR REPLACE PROCEDURE public.admins()
+LANGUAGE 'sql'
+AS $BODY$select * FROM admins$BODY$;
+CREATE OR REPLACE PROCEDURE public.kitap()
+LANGUAGE 'sql'
+AS $BODY$select * FROM kitap$BODY$;
+CREATE OR REPLACE PROCEDURE public.uye_kitap()
+LANGUAGE 'sql'
+AS $BODY$select * FROM uye_kitap$BODY$;

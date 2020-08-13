@@ -1,0 +1,85 @@
+CREATE TABLE tur (
+    tur_id SERIAL PRIMARY KEY,
+    tur_ad VARCHAR(20)
+);
+/*1*/
+CREATE TABLE kategori (
+    kat_id SERIAL PRIMARY KEY,
+    kat_ad VARCHAR(20)
+);
+/*2*/
+CREATE TABLE alinan_kitap (
+    al_id SERIAL PRIMARY KEY,
+    al_kitap_id int
+);
+/*3*/
+CREATE TABLE kitap (
+    kitap_id SERIAL PRIMARY KEY,
+    kitap_ad varchar(20),
+	katag_id int,
+	tur_id int
+);
+/*4*/
+CREATE TABLE ver_kitap (
+    ver_id SERIAL PRIMARY KEY,
+    ver_kitap_id int
+);
+/*5*/
+CREATE TABLE kullanici (
+    k_id SERIAL PRIMARY KEY,
+    k_ad varchar(20),
+	k_pass varchar(20)
+);
+/*6*/
+CREATE TABLE admins (
+    admin_id SERIAL PRIMARY KEY,
+    admin_kad varchar(20),
+	admin_password varchar(500),
+	admin_updated_at timestamp
+);
+/*7*/
+CREATE TABLE hediye (
+    puan_id SERIAL PRIMARY KEY,
+    puan_miktar int,
+	puan_uye_id int
+);
+/*8*/
+CREATE TABLE uye (
+    uye_id SERIAL PRIMARY KEY,
+	uye_ad varchar(20)
+);
+/*9*/
+CREATE TABLE stok (
+   	stok_id SERIAL PRIMARY KEY,
+	stok_kitap_id int,
+    stok_miktar int
+);
+/*10*/
+CREATE TABLE bakim (
+    bakim_id SERIAL PRIMARY KEY,
+	b_kitap_id int
+);
+/*11*/
+
+CREATE TABLE stok_iade (
+    stok__iade_id SERIAL PRIMARY KEY,
+	stok_iade_miktar int
+);
+/*12*/
+CREATE TABLE stok_ihtiyac (
+    stok_ihtiyac_id SERIAL PRIMARY KEY,
+	ihtiyac_miktar int
+);
+/*13*/
+CREATE TABLE uye_kitap (
+    uk_id SERIAL PRIMARY KEY,
+	uk_uye_id int,
+	uk_kitap_id int
+);
+/*14*/
+CREATE TABLE kul_kit (
+    kk_id SERIAL PRIMARY KEY,
+	kk_kul_id int,
+	kk_kit_id int
+);
+/*15*/
